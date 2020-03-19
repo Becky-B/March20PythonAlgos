@@ -17,13 +17,23 @@ class Stack:
 
     # challenge for you guys
     def Push(self, val):
-        #This code should handle pushing into a stack
-        pass
+        newnode = SLNode(val)
+        newnode.next = self.head
+        self.head = newnode
+        return self
 
     def Pop(self):
-        # This code should handle removing from a stack
-        pass
+        if self.head == None:
+            print("Stack is empty")
+        
+        toReturn = self.head
+        self.head = toReturn.next
+        return toReturn
 
     def Peek(self):
-        # This code should handle showing what is at the top of a stack
-        pass
+        if self.head == None:
+            print("Stack is empty")
+            return self.head
+        else:
+            # print(self.head.value)
+            return self.head.value
